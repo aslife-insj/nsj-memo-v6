@@ -194,6 +194,9 @@
       '<span class="mini"><b>' + esc(p.term) + '</b><i>·</i><b>' + esc(p.key) + '</b><i>·</i><span>' + esc(p.payment) + '</span></span>' +
       '<span class="desc">' + esc(p.keydesc) + '</span></a>';
   }
+  function acc(title, list, open) {
+    return arr(list).length ? '<details' + (open ? ' open' : '') + '><summary>' + esc(title) + '</summary><div class="detail-body">' + ul(list) + '</div></details>' : '';
+  }
   function noticeHtml(key) {
     var t = C.notices && C.notices[key];
     return t ? '<div class="notice notice--' + key + '"><span class="n-ico" aria-hidden="true">i</span><span>' + esc(t) + '</span></div>' : '';
@@ -264,10 +267,8 @@
       '<div class="fact"><span class="lbl">Взнос</span><div>' + esc(p.contribution) + '</div></div>' +
       '<div class="fact"><span class="lbl">Возраст</span><div>' + esc(p.age) + '</div></div>' + lim +
       '<div class="fact"><span class="lbl">Страховщик</span><div>' + esc(p.factory) + '</div></div></div>' +
-      '<details open><summary>Доход / ключевая выгода</summary><div class="detail-body">' + ul(p.income) + '</div></details>' +
-      '<details><summary>' + esc(p.medical_title) + '</summary><div class="detail-body">' + ul(p.medical) + '</div></details>' +
-      '<details><summary>Фишка продукта</summary><div class="detail-body">' + ul(p.features) + '</div></details>' +
-      '<details><summary>Кому подойдет</summary><div class="detail-body">' + ul(p.audience) + '</div></details>' +
+      acc('Доход / ключевая выгода', p.income, true) + acc(p.medical_title, p.medical) +
+      acc('Фишка продукта', p.features) + acc('Кому подойдет', p.audience) +
       (p.footnote ? '<div class="source">' + esc(p.footnote) + '</div>' : '') +
       noticeHtml('legal') +
       '<div class="source">Источник: ' + esc(c.source) + '</div>' +

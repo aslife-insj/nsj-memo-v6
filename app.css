@@ -79,9 +79,9 @@ h1{font-size:32px;line-height:38px;font-weight:600;letter-spacing:0;margin:0 0 v
 .detail-head .eyebrow{display:inline-block;font-size:12px;line-height:16px;font-weight:400;text-transform:uppercase;letter-spacing:.05em;color:var(--text);background:var(--bg-2);border-radius:var(--radius-100);padding:6px 12px;margin-bottom:var(--space-12)}
 .detail-head h2{font-size:28px;line-height:34px;font-weight:600;letter-spacing:0;margin:0}
 .quickgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-8);margin:var(--space-16) 0 var(--space-12)}
-.metric{background:var(--white);border:1px solid var(--stroke);border-radius:var(--radius-20);padding:var(--space-16) var(--space-12);min-width:0}
+.metric{background:var(--white);border:1px solid var(--stroke);border-radius:var(--radius-20);padding:var(--space-16) 10px;min-width:0}
 .metric b{display:block;font-size:20px;line-height:24px;font-weight:600;letter-spacing:-.02em;word-break:break-word}
-.metric span{display:block;font-size:12px;line-height:16px;color:var(--grey);margin-top:var(--space-8)}
+.metric span{display:block;font-size:12px;line-height:16px;letter-spacing:-.03em;color:var(--grey);margin-top:var(--space-8);overflow-wrap:break-word}
 .summary-card{border:1px solid var(--stroke);background:var(--white);border-radius:var(--radius-24);padding:var(--space-20);margin-top:var(--space-12)}
 .summary-card h3{font-size:20px;line-height:24px;font-weight:600;letter-spacing:-.02em;margin:0 0 var(--space-16)}
 .fact{display:grid;grid-template-columns:104px minmax(0,1fr);gap:var(--space-12);padding:var(--space-12) 0;border-top:1px solid var(--stroke)}
